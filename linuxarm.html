@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando ARM y Linux</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+        }
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explorando ARM y Linux</h1>
+    </header>
+
+    <section>
+        <h2>ARM</h2>
+        <p>ARM es una arquitectura de conjunto de instrucciones reducido (RISC) utilizada en una variedad de dispositivos, incluyendo teléfonos móviles, tabletas y dispositivos embebidos. Su diseño eficiente y su consumo de energía lo hacen ideal para dispositivos con limitaciones de recursos.</p>
+        <p>ARM Holdings desarrolla la arquitectura, y muchas empresas fabrican chips basados en la arquitectura ARM.</p>
+    </section>
+
+    <section>
+        <h2>Linux</h2>
+        <p>Linux es un sistema operativo de código abierto basado en el kernel de Linux. Es ampliamente utilizado en servidores, dispositivos embebidos y también como sistema operativo de escritorio. Su naturaleza de código abierto permite a los usuarios modificar y distribuir su código fuente de acuerdo con los términos de la Licencia Pública General de GNU (GPL).</p>
+        <p>El kernel de Linux fue creado por Linus Torvalds en 1991, y desde entonces ha experimentado un desarrollo colaborativo significativo.</p>
+    </section>
+
+    <section>
+        <h2>Chat sobre ARM y Linux</h2>
+        <p>¡Bienvenido al chat sobre ARM y Linux! Si tienes preguntas o deseas aprender más sobre estos temas, no dudes en preguntar en el chat a continuación:</p>
+
+        <div id="chat-container">
+            <ul id="messages"></ul>
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </section>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const messagesContainer = document.getElementById('messages');
+
+            const userMessage = document.createElement('li');
+            userMessage.textContent = `Usuario: ${userInput.value}`;
+            messagesContainer.appendChild(userMessage);
+
+            // Simula respuestas específicas sobre ARM y Linux
+            const chatGptMessage = document.createElement('li');
+            if (userInput.value.toLowerCase().includes('arm')) {
+                chatGptMessage.textContent = 'ChatGPT: ARM es una arquitectura RISC comúnmente utilizada en dispositivos móviles y embebidos.';
+            } else if (userInput.value.toLowerCase().includes('linux')) {
+                chatGptMessage.textContent = 'ChatGPT: Linux es un sistema operativo de código abierto basado en el kernel de Linux.';
+            } else {
+                chatGptMessage.textContent = 'ChatGPT: No entiendo completamente. ¿Puedes preguntar sobre ARM o Linux?';
+            }
+            messagesContainer.appendChild(chatGptMessage);
+
+            // Limpia el cuadro de entrada
+            userInput.value = '';
+        }
+    </script>
+</body>
+</html>
